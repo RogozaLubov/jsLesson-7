@@ -1,37 +1,46 @@
 //Task 1
 //Map
-let human =[
-    {name: 'Victoria', age: 26 },
-    {name: 'Marshal', age: 30 },
-    {name: 'Helen', age: 15 },
-    {name: 'Boris', age: 25 },
-];
-const newHuman = human.map(persone => {
-    if (persone.age >= 21){
-    return true
- }else {
-     return false
+
+let word =['one' , 'two']
+
+ function map(arr,mapper) {
+     let result = []
+     for (let i=0; i<arr.length; i++ ){
+        result[i] = mapper(arr[i]);
+    }
+    return result;
  }
-})
-console.log (newHuman)
+
+console.log(map(["one","two"], s => s[1] === "a")); 
 //Some
-const someHuman = human.some(adult);
-function adult(humans) {
-    return humans.age >= 18;
-    
+function  some(arr, predicate) {
+    for (let i=0; i<arr.length; i++ ){
+        if (predicate(arr[i])) return true;
+    }
+    return false;
 }
-console.log(someHuman);
+console.log(some(["one","two"], s=>s==="one")); //true
+console.log(some(["one","two"], s=>s==="rrr")); //false
+
 //Every
-const everyHuman = human.every(person=> person.name!== undefined)
-console.log(everyHuman)
+function every(arr, predicate) {
+    for (let i=0; i<arr.length; i++ ){
+        if (!predicate(arr[i])) return false;
+    }
+    return true;
+}
+
+console.log(every(["one","two"], s=>s==="one")); //false
+console.log(every(["one","two"], s=>s.length==3)); //true
 //Reduce
-
-const sumAge = human.reduce((arr,human) => {
-      return arr + human.age
-}, 0)
-
-console.log (sumAge);
-
+function reduce(arr, predicate,startValue) {
+    var i, length = arr.length, result = startValue;
+  for (i = 0; i < length; i = i + 1) {
+    result = predicate.call(null, result, arr[i], i, arr);
+  }
+  return result;
+};
+console.log (reduce(["one","two"],s=>s==="one"))
 //====Task2====
 
 let user0 = {
