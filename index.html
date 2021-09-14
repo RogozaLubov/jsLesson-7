@@ -8,12 +8,32 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <dl>
-        <dt><label for="name">Name</label></dt>
-        <dd><input type="text" id="name"></dd>
-        <dt><label for="phone">Name</label></dt>
-        <dd><input type="text" id="phone"></dd>
-        <dd><button onclick="addContact()">add</button></dd>
-    </dl>
+    <h2>Задача 1</h2> 
+   <p>
+    реализовать функции для работы с массивами: map(arr, mapper), some(arr, predicate),every(arr, predicate), доп. - reduce(arr, predicate,startValue)
+   </p>
+   <p>
+    контрольные примеры:
+    
+    console.log(map(["one","two"], s=>s.toUpperCase())); // ["One","Two"]
+    console.log(some(["one","two"], s=>s==="one")); //true
+    console.log(some(["one","two"], s=>s==="rrr")); //false
+    console.log(every(["one","two"], s=>s==="one")); //false
+    console.log(every(["one","two"], s=>s.length==3)); //true
+   </p>
+   <h2>Задача 2</h2>
+   <p>
+    а) Используя методы для работы с массивами выбрать из массива людей тех, у кого имя и фамилия начинаются на одну букву (Александр Алексеев), про одного человека хранить: имя, фамилию и отчество <br>
+
+    б) Преобразовать массив людей в массив строк с фамилией и инициалами<br>
+    
+    в) Осуществить поиск контактов по массиву по началу номера телефона (контакт = имя+телефон) <br>
+    
+    г) Проверить наличие телефонного номера среди массива контактов <br>
+   </p>
+
+    
+    
+    
 </body>
 </html>
